@@ -7,6 +7,8 @@ import cors from 'cors';
 import swaggerUi from 'swagger-ui-express'
 import * as swaggerFile from './swagger/swagger.json'
 
+import './database/mongoconnect'
+
 import routes from './routes/index';
 
 const app = express();
