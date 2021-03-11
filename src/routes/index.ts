@@ -2,16 +2,37 @@ import express, { Request, Response, NextFunction } from 'express';
 
 const routes = express.Router();
 
-import cityroutes from './cityroutes';
+// import cityroutes from './cityroutes';
 
 routes
   .get('/api/v1/home', (req: Request, res: Response, next: NextFunction) => {
-    return res.status(200).json({ message: "Servico em Operação Home Api V1" })
+    let data = [
+      {"id": 1, "name": "Pedro", "age": 25},
+      {"id": 1, "name": "João", "age": 17},
+      {"id": 1, "name": "Marcelo", "age": 32},
+      {"id": 1, "name": "Roberto", "age": 27},
+      {"id": 1, "name": "Anitta", "age": 18},
+      {"id": 1, "name": "Carol", "age": 22},
+      {"id": 1, "name": "Janaina", "age": 19},
+    ]
+    return res.status(200).json(data)
+  });
+
+routes
+  .get('/api/v1/page02', (req: Request, res: Response, next: NextFunction) => {
+    let data = [
+      {"id": 1, "name": "Pedro", "age": 25},
+      {"id": 1, "name": "João", "age": 17},
+      {"id": 1, "name": "Marcelo", "age": 32},
+      {"id": 1, "name": "Roberto", "age": 27},
+      {"id": 1, "name": "Anitta", "age": 18},
+      {"id": 1, "name": "Carol", "age": 22},
+      {"id": 1, "name": "Janaina", "age": 19},
+    ]
+    return res.status(200).json(data)
   });
 
 
-
-routes.use('/api/v1', cityroutes);
 
 
 routes
