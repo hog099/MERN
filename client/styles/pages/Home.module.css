@@ -42,3 +42,41 @@
     background-color: var(--dark-background);
     color: var(--white)
 }
+
+.itemlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 0 0;
+    width: 22rem;
+    height: 50px;
+    padding: 3px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 18px -2px #00000022;
+}
+
+.itemlistcontentleft {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 60%;
+    padding: 5px;
+}
+
+.itemlistcontentleft p {
+    font-size: 0.8rem;
+}
+
+.itemlistcontentright {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 40%;
+}
+
+.itemlistcontentright button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--red);
+}

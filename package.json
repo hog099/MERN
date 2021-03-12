@@ -4,7 +4,7 @@
     "description": "",
     "main": "src/server.ts",
     "scripts": {
-        "dev": "nodemon --watch src/ --exec ts-node src/server.ts -e ts",
+        "dev": "nodemon --watch src/ --exec ts-node src/server.ts --trace-warnings -e ts",
         "build": "rm -rf dist && tsc",
         "build-full": "cd client && yarn export && cd .. && gulp copyclient && rm -rf dist && tsc",
         "run-prod": "node dist/server.js",

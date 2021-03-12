@@ -20,10 +20,22 @@ const Home: React.FC = () => {
 
 
   const loaddata = () => {
-    api.get('/api/v1/home')
+    api.get('/api/v1/tasks')
       .then((response) => {
         // console.log('response get empresas', response.data);
-        setdatalist(response.data);
+        setdatalist(response.data.data);
+      })
+      .catch((error) => {
+        console.log('Error!', error)
+      });
+
+  }
+
+  const handleDelete = (id) => {
+    api.delete(`/api/v1/tasks/${id}`)
+      .then((response) => {
+        // console.log('response get empresas', response.data);
+        loaddata();
       })
       .catch((error) => {
         console.log('Error!', error)
@@ -50,15 +62,22 @@ const Home: React.FC = () => {
         </Link>
 
         <div>
+
           {datalist && datalist.map((item, index) => {
             return (
-              <div key={index}>
-                <p>{item.name}</p>
+              <div key={index} className={styles.itemlist}>
+                <div className={styles.itemlistcontentleft}>
+                  <p>{item.title}</p>
+                </div>
+                <div className={styles.itemlistcontentright}>
+                  <button onClick={() => handleDelete(item._id)}>excluir</button>
+                </div>
+
               </div>
             );
           })}
         </div>
-        
+
       </main>
 
     </div>

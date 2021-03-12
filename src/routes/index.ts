@@ -2,7 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 
 const routes = express.Router();
 
-// import cityroutes from './cityroutes';
+import taskroutes from './taskroutes';
 
 routes
   .get('/api/v1/home', (req: Request, res: Response, next: NextFunction) => {
@@ -33,6 +33,8 @@ routes
   });
 
 
+  routes.use('/api/v1', taskroutes);
+  
 
 
 routes
