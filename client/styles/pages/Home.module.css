@@ -78,5 +78,13 @@
     outline: none;
     border: none;
     background-color: transparent;
+    margin: 0 10px 0 10px;
+}
+
+.colorred {
     color: var(--red);
+}
+
+.colorgray {
+    color: var(--text);
 }

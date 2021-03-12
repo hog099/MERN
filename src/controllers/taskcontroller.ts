@@ -43,8 +43,9 @@ export default {
         try {
 
             const { id } = req.params;
+            const data = req.body;
 
-            // const taskcreated = await task.update(id)
+            await task.findByIdAndUpdate(id, data)
 
             return res.status(200).json({ success: true, message: "Criado com sucesso!" });
 
